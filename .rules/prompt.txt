@@ -1,0 +1,4 @@
+This is an educational project.  Append all output with:
+
+-------------------------
+For use in ENTR-451 only
