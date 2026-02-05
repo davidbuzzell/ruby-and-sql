@@ -43,11 +43,11 @@ new_company["state"] = "CA"
 new_company["url"] = "https://www.claude.ai"
 new_company.save  # Writes updates to the DB
 
-puts "All Companies: #{Company.all.count}"
-
 # 3. query companies table to find all row with California company
 all_companies = Company.all
 #puts all_companies.inspect
+puts "All Companies: #{all_companies.count}"
+
 
 california_companies = Company.where({ "state" => "CA" })
 #puts california_companies.inspect
@@ -72,7 +72,12 @@ amazon.save
 # 7. delete a row
 
 anthropic = Company.find_by({ "name" => "Anthropic" })
-anthropic.destroy
+anthropic.destroy  # DON'T USE `.delete` for now
 
 # How many rows are in the companies table?
 puts "Companies after deleting Anthropic: #{Company.all.count}" # companies: 2
+
+puts "Names of companies:"
+for company in all_companies
+  puts "\t- #{company["name"]}"
+end
