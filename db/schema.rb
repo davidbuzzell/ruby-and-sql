@@ -23,7 +23,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_05_014503) do
     t.datetime "created_at", null: false
     t.string "name"
     t.string "state"
-    t.string "text"
+    t.string "city"
     t.datetime "updated_at", null: false
     t.string "url"
   end
